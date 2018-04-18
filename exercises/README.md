@@ -1,2 +1,2 @@
 # Exercises
-- 1st homework
+- [1st homework](01Hw.scala)
