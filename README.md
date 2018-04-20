@@ -5,7 +5,7 @@ Material for course Programmiersprachen 1 (SS 2018) - Universität Tübingen
 The exam takes place on Thursday, 2.8.2018, 14.15h in F119 (Hörsaal 1 in Sand 6/7).
 
 ## Schedule
-- April 19. Lecture
+- April 19. Lecture: [Introduction](lecturenotes/01-intro.scala), [Scala Basics](lecturenotes/02-scala-basics.scala), [Desugaring](lecturenotes/03-desugaring.scala)
 
 ## Homework
 - [1st homework](exercises/01Hw.scala)
