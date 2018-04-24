@@ -11,3 +11,5 @@ The exam takes place on Thursday, 2.8.2018, 14.15h in F119 (Hörsaal 1 in Sand 6
 - [1st homework](exercises/01Hw.scala)
 
 Homework policy: to be admitted to the exam, hand in reasonable solutions to all but two homeworks.
+
+**Note**: Registration is now closed.
