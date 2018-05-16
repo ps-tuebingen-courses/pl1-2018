@@ -111,7 +111,7 @@ def subst(e1 : Exp, x: Symbol, e2: Exp) : Exp = e1 match {
   case App(f,a) => App(subst(f,x,e2),subst(a,x,e2))
   case Fun(param,body) =>
     if (param == x) e1 else {
-      val fvs = freeVars(e2) + x
+      val fvs = freeVars(Fun(param,body)) ++ freeVars(e2) + x
       val newvar = freshName(fvs, param)
       Fun(newvar, subst(subst(body, param, Id(newvar)), x, e2))
     }
