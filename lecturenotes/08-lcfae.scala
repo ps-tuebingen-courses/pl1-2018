@@ -226,6 +226,7 @@ object CallByNeed extends CBN {
     if (t.cache == null) {
       println("Forcing evaluation of expression: "+t.e)
       t.cache = eval(t.e, t.env)
+      t.cache
     } else println ("Reusing cached value "+t.cache+" for expression "+t.e)
     t.cache
   }
