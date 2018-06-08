@@ -11,12 +11,14 @@ The exam takes place on Thursday, 2.8.2018, 14.15h in F119 (Hörsaal 1 in Sand 6
 - May 3 and 7: Lecture: [Higher-Order Functions](lecturenotes/07-fae.scala)
 - May 17: Lecture: [Lazy Evaluation](lecturenotes/08-lcfae.scala)
 - May 28: Lecture: [Recursion](lecturenotes/09-rcfae.scala), [Mutation](lecturenotes/10-bcfae.scala)
+- June 7: Lecture: [Syntactic Interpretation Vs. Meta Interpretation](lecturenotes/12-syntacticvsmeta.scala), [Church Encoding](lecturenotes/13-churchencoding.scala)
 
 ## Homework
 - [1st homework](exercises/01Hw.scala)
 - [2nd homework](exercises/02Hw.scala)
 - [3rd homework](exercises/03Hw.md)
 - [4th homework](exercises/04Hw.md)
+- [5th homework](exercises/05Hw.md)
 
 Homework policy: to be admitted to the exam, hand in reasonable solutions to all but two homeworks.
 
