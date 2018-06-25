@@ -91,14 +91,17 @@ implicit def num2exp(n: Int) = Num(n)
 implicit def id2exp(s: Symbol) = Id(s)
 
 /* For CPS transformed terms, we define two different syntactic categories: Values (CPSVal) and Expressions (CPSExp).
+   By "values", we mean terms that "return", that is, terms that are different from applications of functions
+   or continuations (neither of which returns). Additions (CPSAdd) are also values in this regard: We assume addition
+   to be built-in and not requiring CPS-transformations.
    The syntax makes clear that all arguments of a function application are values - hence no nesting of applications
    can occur. Furthermore, the syntax differentiates between defining an ordinary function (CPSFun) which, when translated,
    gets an additional continuation parameter, and Continuation Functions (CPSCont), which are the result of the CPS 
    transformation. Correspondingly, we have two different forms of applications, CPSContApp and CPSFunApp.
    
    Here is the formal definition: */
-sealed abstract class CPSVal
-abstract class CPSExp extends CPSVal
+sealed abstract class CPSExp
+abstract class CPSVal extends CPSExp
 case class CPSNum(n: Int) extends CPSVal
 case class CPSCont(v: Symbol, body: CPSExp) extends CPSVal
 case class CPSFun(x: Symbol, k: Symbol, body: CPSExp) extends CPSVal
@@ -107,7 +110,7 @@ implicit def id2cpsexp(x: Symbol) = CPSVar(x)
 
 case class CPSContApp(k: CPSVal, a: CPSVal) extends CPSExp
 case class CPSFunApp(f: CPSVar, a: CPSVar, k: CPSVar) extends CPSExp // the arguments are even CPSVar and not only CPSVal!
-case class CPSAdd(l: CPSVar, r: CPSVar) extends CPSExp
+case class CPSAdd(l: CPSVar, r: CPSVar) extends CPSVal
 
 /* With these definitions, we are now ready to formalize the transformation described above.
  * There is one technical issues: We need to introduce new names for binders into our program, such as 'k.
